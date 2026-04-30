@@ -92,6 +92,7 @@ public class PixelPedia {
 
         if (!newGame.isEmpty()) {
             games.add(new Game(newGame));
+            sortGames();
             refreshList();
             inputField.clear();
         }
@@ -101,8 +102,7 @@ public class PixelPedia {
      * Sorts the games in the 'games' list based on their titles.
      */
     public void sortGames() {
-        
-        
+        games.sort((game1, game2) -> game1.getTitle().compareToIgnoreCase(game2.getTitle()));
     }
 
     /**
